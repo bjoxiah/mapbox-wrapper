@@ -14,7 +14,7 @@ Provide some environment variables in `environment.ts` file
 
 {
   production: false,
-  token: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  token: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX,
   maptiler_key: XXXXXXXXXXXXXXXXXXXXXXXXX
 }
 ```
