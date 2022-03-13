@@ -1,0 +1,75 @@
+<ng-container *ngIf="(details$|async) as details">
+  <div class="details">
+<!--    <div class="photos">-->
+<!--        <ng-container *ngFor="let item of details.photos.slice(0, 3)">-->
+<!--          <div class="img-box">-->
+<!--            <img [src]="item" alt="" class=""rounded/>-->
+<!--          </div>-->
+<!--        </ng-container>-->
+<!--    </div>-->
+    <mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'" *ngIf="details.photos.length > 0">
+      <mdb-carousel-item style="height: 300px" *ngFor="let item of details.photos">
+        <img
+          [src]="item"
+          class="d-block w-100"
+          alt="..."
+        />
+      </mdb-carousel-item>
+    </mdb-carousel>
+    <mdb-tabs class="accent" [pills]="true" [fill]="false">
+      <mdb-tab title="Features">
+        <div class="unit-amenities p-2" *ngIf="details.specials">
+          <div class="title"><i class="fa fa-info-circle fa-bold"></i> Specials</div>
+          <p class="text-muted py-2 special">{{details.specials}}</p>
+        </div>
+        <div class="unit-amenities p-2">
+          <div class="title"><i class="fa fa-home fa-bold"></i> Unit Amenities</div>
+          <ul class="list-unstyled list-inline row py-2">
+            <li class="col-4 py-2 text-muted" *ngFor="let items of details.unitAmenities">
+              <i class="fa fa-check-double"></i> {{items}}
+            </li>
+          </ul>
+        </div>
+        <div class="high-value-amenities p-2">
+          <div class="title"><i class="fa fa-home fa-bold"></i> High Value Amenities</div>
+          <ul class="list-unstyled list-inline row py-2">
+            <li class="col-4 py-2 text-muted" *ngFor="let items of details.highValueAmenities">
+              <i class="fa fa-check-double"></i> {{items}}
+            </li>
+          </ul>
+        </div>
+        <div class="property-amenities p-2">
+          <div class="title"><i class="fa fa-home fa-bold"></i> Property Amenities</div>
+          <ul class="list-unstyled list-inline row py-2">
+            <li class="col-4 py-2 text-muted" *ngFor="let items of details.propertyAmenities">
+              <i class="fa fa-check-double"></i> {{items}}
+            </li>
+          </ul>
+        </div>
+      </mdb-tab>
+      <mdb-tab title="Others">
+        <ul class="list-unstyled list-inline row py-2">
+          <li class="col-6 py-2 text-muted">
+            <i class="fa fa-calendar"></i> Year Built - {{details?.yearBuilt}}
+          </li>
+          <li class="col-6 py-2 text-muted">
+            <i class="fa fa-calendar"></i> Year Renovated - {{details?.yearRenovated}}
+          </li>
+        </ul>
+
+        <div class="floor-plan p-2" *ngIf="details.floorplans.length > 0">
+          <div class="title"><i class="fa fa-home fa-bold"></i> Floor Plan</div>
+          <ul class="list-unstyled list-inline row py-2">
+            <li class="col-4 py-2 text-muted" *ngFor="let items of details.floorplans">
+              <ng-container *ngIf="items.isAvailable && items.photoUrl">
+              <img [src]="items.photoUrl" style="width: 100px; height: 100px" alt="" /> <br/>
+              Available <i class="fa fa-check-square"></i>
+              </ng-container>
+            </li>
+          </ul>
+        </div>
+      </mdb-tab>
+    </mdb-tabs>
+
+  </div>
+</ng-container>

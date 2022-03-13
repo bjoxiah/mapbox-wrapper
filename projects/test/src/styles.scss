@@ -1,0 +1,46 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: #909090 }
+::-webkit-scrollbar { width: 8px; height: 5% }
+::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 8px }
+::-webkit-scrollbar-thumb { background: #cfcfcf; border-radius: 8px }
+::-webkit-scrollbar-thumb:hover { background: #b4b4b4 }
+
+@import url('~maplibre-gl/dist/maplibre-gl.css');
+
+ng-progress {
+  // host element
+}
+
+.ng-progress-bar {
+  // bar wrapper
+}
+
+.ng-bar-placeholder {
+  // bar placeholder
+
+  // change the height of the progress bar
+  height: 40px !important;
+}
+
+.ng-bar {
+  // the actual bar that translates with when the progress increments
+  height: 5px !important;
+}
+
+.ng-spinner {
+  // Spinner wrapper
+}
+
+.ng-spinner-icon {
+  // The actual spinner where defines the radius size and animation
+}
+@import "./custom-theme.scss";
+// Font Awesome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+// MDB SCSS
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
+

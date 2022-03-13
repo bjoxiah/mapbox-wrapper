@@ -1,0 +1,12 @@
+<div class="sidebar-wrapper">
+<!--  <txt-search></txt-search>-->
+<!--  -->
+  <div *ngIf="(allData$ | async) as data; else loadingTemplate">
+    <div *ngIf="data.length > 0; else noDataTemplate">
+      <app-list [dataList]="data"></app-list>
+    </div>
+    <ng-template #noDataTemplate>No data.</ng-template>
+  </div>
+  <ng-template #loadingTemplate>Loading...</ng-template>
+</div>
+

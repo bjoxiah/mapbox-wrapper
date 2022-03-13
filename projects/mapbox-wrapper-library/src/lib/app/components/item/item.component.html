@@ -1,0 +1,11 @@
+<div mat-card class="item-card" (click)="setSelectedItem()">
+  <div class="card-body">
+    <div class="title">
+      <h4>{{details?.name}}</h4>
+      <p>{{details?.listID}}</p>
+    </div>
+    <div class="image">
+      <img mat-card-sm-image [src]="details?.photo" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<ng-progress></ng-progress>
+<mat-drawer-container class="map-container">
+  <mat-drawer mode="side" opened class="map-drawer">
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-map></app-map>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,9 @@
+<mat-toolbar color="primary" class="header">
+  <button class="nav-button" *ngIf="(details$|async) as details" routerLink="/">
+    <i class="fa fa-long-arrow-left"></i>
+  </button>
+  <span *ngIf="(details$|async) as details; else headerTitle">{{details.name}}</span>
+  <ng-template #headerTitle>{{headerName$|async}}</ng-template>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
